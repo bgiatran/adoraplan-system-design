@@ -1,54 +1,80 @@
-# AdoraPlan - Eucharistic Adoration Planner
+# AdoraPlan System  
+**Eucharistic Adoration Scheduler & System Design Case Study**
 
-**AdoraPlan** is a Eucharistic Adoration Scheduler App designed to modernize and simplify the coordination of adoration time slots within the **St. Pius X Parish** community, with the potential for expansion to the **Archdiocese of Seattle**. It addresses the challenge of managing continuous presence during Eucharistic veneration by offering a secure, mobile-accessible scheduling platform.
+AdoraPlan is a complete system design and documentation project built to modernize the way Eucharistic Adoration is coordinated. Originally developed for the **St. Pius X Parish**, this scalable platform aims to enhance spiritual engagement, reduce administrative burden, and improve accessibility through a secure, role-based digital scheduling system. The project encompasses everything from feasibility analysis to system modeling and wireframes—laying the foundation for a full-stack implementation in the future.
+
+---
+
+## Project Purpose
+
+Manual sign-up sheets for adoration scheduling are difficult to manage and prone to errors, particularly when continuous presence is required. This project proposes a digital solution to address these inefficiencies by building a structured and intuitive system that allows:
+
+- Secure digital scheduling for parishioners  
+- Administrative visibility and oversight  
+- Clear user roles and workflows  
+- Accessible and mobile-friendly interfaces
+
+The system was originally scoped for **St. Pius X Parish** with future expansion potential to other parishes or the **Archdiocese of Seattle**.
+
+---
 
 ## Objectives
 
-- Replace manual sign-up sheets with a streamlined digital solution.
-- Enable parishioners to reserve, manage, trade, or drop adoration time slots.
-- Provide a communication channel (Q&A Chat) between parishioners.
-- Ensure secure access using barcode scans and encrypted user data.
-- Promote spiritual engagement by enhancing accessibility and reliability.
-- Support administrators with reporting features and schedule oversight.
+- Replace manual adoration sign-up sheets with a digital platform  
+- Allow parishioners to **reserve**, **manage**, **trade**, or **drop** time slots  
+- Provide a **Q&A communication channel** between parishioners  
+- Enforce **secure access** via barcode scans and encrypted login  
+- Support parish staff with **reporting tools** and **schedule oversight**  
+- Enhance spiritual participation through accessibility and dependability
+
+---
 
 ## Deliverables
 
-1. **System Proposal (Parts 1 & 2)**  
-   - Executive Summary  
-   - Feasibility Analysis  
-   - Functional, Non-functional, and Data Requirements  
-   - Use Case Diagrams and Descriptions  
-   - Risk Assessment and Cost Estimate
+| Category             | Contents                                                                 |
+|---------------------|--------------------------------------------------------------------------|
+| **System Proposal** | Executive Summary, Feasibility Analysis, Requirements, Risk Assessment   |
+| **Specification**   | Class Diagrams, Metadata, Architecture Design, Infrastructure Plan       |
+| **Modeling**        | Use Case Diagrams, Sequence Diagrams, ERD                                |
+| **Design**          | Wireframes (Mobile + Desktop), User Flows                                |
+| **Documentation**   | README, Glossary, References, Appendices                                 |
 
-2. **System Specification**  
-   - System Capabilities  
-   - Class Diagrams and Metadata Definitions  
-   - Architecture Design (3-tier model)  
-   - Infrastructure and Security Requirements  
-   - User Interface Wireframes
+---
 
-3. **Documentation**  
-   - README.md (this file)  
-   - Glossary, References, and Appendices
+## System Design Components
 
-## What I Learned
+### Functional Scope
 
-Throughout the course of this project, I developed key skills and insights in system design and implementation:
+- Time slot management (sign-up, drop, swap)
+- User authentication with role-based access (Admin, Parishioner, Guest)
+- QR/barcode scan for attendance logging
+- Notifications and reminders
+- Weekly reporting for administrators
+- Q&A Chat module for parishioner communication
 
-- **Requirement Gathering**  
-  Learned how to engage stakeholders and translate their needs into functional system components.
+### Non-Functional Requirements
 
-- **System Modeling**  
-  Built use case diagrams, class diagrams, and metadata models using UML tools like LucidChart.
+- Accessible UX/UI for elderly users  
+- Security (GDPR-compliant user data handling)  
+- Mobile-responsiveness  
+- Low-latency schedule interactions  
+- Fault tolerance during high usage periods  
 
-- **Technical Planning**  
-  Understood the full lifecycle of a project: from vision and feasibility to architecture and interface design.
+---
 
-   **Security and Compliance**  
-  Gained awareness of data protection standards such as **GDPR** and **FLSA**, and how to build compliant systems.
+##  System Architecture
 
-- **UX/UI Design**  
-  Designed interfaces with accessibility and simplicity in mind for a diverse user base, including older parishioners.
+### High-Level Design
 
-- **Testing and Maintenance Planning**  
-  Developed a testing roadmap and maintenance strategy for post-launch stability and improvements.
+- **3-Tier Architecture:**
+  - **Presentation Layer:** Figma wireframes, mobile-first design  
+  - **Logic Layer:** Flow diagrams, sequence models (designed)  
+  - **Data Layer:** Class diagrams, metadata model, simulated DB schema
+
+### Key System Models
+
+- **ERD (Entity-Relationship Diagram)** for users, time slots, commitments, and chats  
+- **Class Diagrams** outlining system components and metadata  
+- **Use Case Diagrams** for major system interactions  
+- **Wireframes** for Admin Dashboard, Sign-Up Screen, Mobile Schedule  
+- **User Flows** for core scenarios (signup, admin oversight, slot swap)
