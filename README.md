@@ -78,3 +78,44 @@ The system was originally scoped for **St. Pius X Parish** with future expansion
 - **Use Case Diagrams** for major system interactions  
 - **Wireframes** for Admin Dashboard, Sign-Up Screen, Mobile Schedule  
 - **User Flows** for core scenarios (signup, admin oversight, slot swap)
+
+## Security & Infrastructure
+
+- Secure login using password encryption and token sessions  
+- Role-based permissions (e.g., Admins can edit schedules, Users cannot)  
+- QR/barcode scanning integrated into the check-in system (proposed)  
+- System designed with GDPR, HIPAA, and FLSA awareness in mind  
+
+---
+
+## What I Learned
+
+### Requirement Gathering
+- Conducted stakeholder interviews and interpreted community needs into structured, formal requirements  
+- Balanced spiritual mission with technical feasibility and user constraints  
+
+### System Modeling
+- Created use case and class diagrams using UML tools like LucidChart  
+- Defined metadata models, ERDs, and relationships between users, time slots, and commitments  
+
+### Technical & Lifecycle Planning
+- Understood full project phases from proposal to architecture  
+- Analyzed feasibility and estimated costs based on technical and human resources  
+
+### Security & Accessibility
+- Researched secure login practices and compliant data handling for church-related use cases  
+- Designed interfaces accessible to elderly parishioners through larger UI elements and minimal interaction steps  
+
+### Testing & Maintenance
+- Designed a long-term maintenance and stability roadmap  
+- Drafted a testing plan focused on usability, reliability, and failover conditions  
+
+---
+
+## Future Improvements
+
+- **Backend Implementation:** Convert wireframes and flows into a working MVP using Django or Firebase  
+- **Mobile App Development:** Launch a PWA or native app version for on-the-go scheduling and reminders  
+- **Slot Swap Logic:** Implement intelligent slot matching or swap recommendations to prevent unattended hours  
+- **Admin Analytics Dashboard:** Add weekly summary reports on attendance, missed slots, and backup coverage needs  
+- **Integration with Parish Systems:** Connect to Google Calendar, Flocknote, or Archdiocesan event platforms for unified coordination  
