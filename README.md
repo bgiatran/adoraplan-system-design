@@ -43,6 +43,18 @@ The system was originally scoped for **St. Pius X Parish** with future expansion
 
 ## System Design Components
 
+### Specification Document – Table of Contents
+
+![Specification TOC](images/Screenshot%20(128).png)  
+This table of contents outlines the full technical scope of the system. It includes key components such as infrastructure design, class definitions, metadata, data flow, and system requirements. It served as the anchor for detailed system modeling and made stakeholder alignment easier.
+
+### Proposal Document – Table of Contents
+
+![Proposal TOC](images/Screenshot%20(124).png)  
+This document presents the strategic case for building AdoraPlan. It includes feasibility analysis, risk assessment, stakeholder goals, and initial technical decisions. It also scoped early non-functional requirements like accessibility for elderly users and GDPR compliance.
+
+---
+
 ### Functional Scope
 
 - Time slot management (sign-up, drop, swap)
@@ -71,20 +83,73 @@ The system was originally scoped for **St. Pius X Parish** with future expansion
   - **Logic Layer:** Flow diagrams, sequence models (designed)  
   - **Data Layer:** Class diagrams, metadata model, simulated DB schema
 
+### Architecture Overview
+
+![Architecture Overview](images/Screenshot%20(131).png)  
+A 3-tier model outlines how the system separates logic, data, and presentation concerns. The Presentation Layer includes responsive UIs; the Logic Layer models core scheduling behavior and rules; the Data Layer contains class-backed models tied to a simulated database schema.
+
+---
+
 ### Key System Models
 
 - **ERD (Entity-Relationship Diagram)** for users, time slots, commitments, and chats  
-- **Class Diagrams** outlining system components and metadata  
+- **Class Diagrams** outlining system components and metadata
+
+![Class Diagram](images/Screenshot%20(129).png)  
+These diagrams define the object-oriented structure of the platform. Core classes include `User`, `TimeSlot`, `Commitment`, and `ChatThread`. Each class is annotated with attributes and basic methods, showing how entities relate across the data layer.
+
+---
+
+### Class Diagram Detail
+
+![Class Diagram Detail](images/Screenshot%20(130).png)  
+This close-up illustrates specific metadata fields (e.g., `Commitment.status`, `User.role`) that support dynamic behavior like schedule filtering, role-based permissions, and communication threads. The details help ensure the system can scale beyond St. Pius X to other parishes.
+
+---
 - **Use Case Diagrams** for major system interactions  
-- **Wireframes** for Admin Dashboard, Sign-Up Screen, Mobile Schedule  
+- **Wireframes** for Admin Dashboard, Sign-Up Screen, Mobile Schedule
+
+### Navigation Flow Diagram
+
+![Navigation Diagram](images/Screenshot%20(134).png)  
+This user flow guides parishioners through the app from login → dashboard → slot management. It’s designed mobile-first with accessibility in mind, including minimal steps, large click areas, and contextual reminders. Admin navigation includes deeper layers for oversight and reporting.
+
+---
+
 - **User Flows** for core scenarios (signup, admin oversight, slot swap)
+
+### Use Case Diagram
+
+![Use Case Diagram](images/Screenshot%20(125).png)  
+This UML diagram maps all major actors and their interactions with the system. Admins, parishioners, and guests each have distinct capabilities. This helped ensure user needs were clearly translated into actionable development features during early planning.
+
+---
+
+### Use Case Detail Example
+
+![Use Case Detail](images/Screenshot%20(126).png)  
+![Use Case Detail](images/Screenshot%20(127).png)  
+This detail zooms into one specific use case—such as *“Swap Time Slot”*—showing preconditions (e.g., a slot must already be reserved), main flow (how a swap request is made), and alternate paths (e.g., if no one accepts the swap). It was key in preparing for system validation and error-handling.
+
+---
 
 ## Security & Infrastructure
 
-- Secure login using password encryption and token sessions  
+- Secure login using password encryption and token sessions
+### Security Plan
+
+![Security Diagram](images/Screenshot%20(133).png)  
+The login and access control model secures the system using encrypted sessions and QR/barcode-based check-ins. Admins have broader control over user accounts, while regular users are limited to their own commitments. This diagram also references GDPR and HIPAA compliance areas.
+
+---
 - Role-based permissions (e.g., Admins can edit schedules, Users cannot)  
 - QR/barcode scanning integrated into the check-in system (proposed)  
-- System designed with GDPR, HIPAA, and FLSA awareness in mind  
+- System designed with GDPR, HIPAA, and FLSA awareness in mind
+
+### Nodes & Deployment Diagram
+
+![Deployment Diagram](images/Screenshot%20(132).png)  
+This shows how the system components can be hosted and scaled—e.g., using Firebase Auth for login, Firestore or PostgreSQL for DB, and a Django REST API or serverless backend. It includes considerations for artifacts like static reports, cloud functions, and failover handling.
 
 ---
 
